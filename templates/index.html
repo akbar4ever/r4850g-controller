@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huawei R4850G Web UI By. DMT</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Huawei R4850G Web UI By. DMT</h1>
+
+    <div class="card">
+      <label>Voltage (V): <input type="number" step="0.1" id="voltage" /></label>
+      <label>Current (A): <input type="number" step="0.1" id="current" /></label>
+      <label>IP Mode:
+        <select id="ip_mode">
+          <option value="dhcp">DHCP</option>
+          <option value="static">Static</option>
+        </select>
+      </label>
+      <button onclick="saveConfig()">Simpan</button>
+    </div>
+
+    <div class="card">
+      <button class="danger" onclick="confirmReset()">Reset Default</button>
+    </div>
+  </div>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <p>Apakah Anda yakin ingin reset ke default?</p>
+      <button onclick="resetConfig()">Ya</button>
+      <button onclick="closePopup()">Tidak</button>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+[Unit]
+Description=Huawei R4850G Web UI Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/orangepi/r4850g-controller/app.py
+WorkingDirectory=/home/orangepi/r4850g-controller
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=orangepi
+Environment=FLASK_ENV=production
+
+[Install]
+WantedBy=multi-user.target
